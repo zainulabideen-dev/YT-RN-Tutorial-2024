@@ -1,5 +1,6 @@
 import {View, Text, SafeAreaView, Image, TextInput} from 'react-native';
 import React from 'react';
+import TextInputFieldComp from '../../components/TextInputFieldComp';
 
 export default function SignUpScreen() {
   return (
@@ -104,63 +105,21 @@ export default function SignUpScreen() {
           }}>
           Or register with email
         </Text>
-        <View>
-          <Text
-            style={{
-              marginTop: 20,
-            }}>
-            Name
-          </Text>
-          <View
-            style={{
-              backgroundColor: '#E5E8E8',
-              height: 40,
-              justifyContent: 'center',
-              paddingHorizontal: 15,
-              marginTop: 3,
-              borderRadius: 5,
-            }}>
-            <TextInput placeholder="user name" />
-          </View>
-        </View>
-        <View>
-          <Text
-            style={{
-              marginTop: 20,
-            }}>
-            Email
-          </Text>
-          <View
-            style={{
-              backgroundColor: '#E5E8E8',
-              height: 40,
-              justifyContent: 'center',
-              paddingHorizontal: 15,
-              marginTop: 3,
-              borderRadius: 5,
-            }}>
-            <TextInput placeholder="email" keyboardType="email-address" />
-          </View>
-        </View>
-        <View>
-          <Text
-            style={{
-              marginTop: 20,
-            }}>
-            Password
-          </Text>
-          <View
-            style={{
-              backgroundColor: '#E5E8E8',
-              height: 40,
-              justifyContent: 'center',
-              paddingHorizontal: 15,
-              marginTop: 3,
-              borderRadius: 5,
-            }}>
-            <TextInput placeholder="password" secureTextEntry />
-          </View>
-        </View>
+        <TextInputFieldComp
+          title={'Name'}
+          placeholder={'user name'}
+          onChangeText={text => console.log(text)}
+        />
+        <TextInputFieldComp
+          title={'Email'}
+          placeholder={'email'}
+          keyboard="email-address"
+        />
+        <TextInputFieldComp
+          title={'Password'}
+          placeholder={'password'}
+          security={true}
+        />
         <View
           style={{
             backgroundColor: '#52BE80',
