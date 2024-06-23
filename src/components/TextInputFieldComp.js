@@ -7,6 +7,7 @@ export default function TextInputFieldComp({
   keyboard = 'default',
   security = false,
   onChangeText,
+  value,
 }) {
   return (
     <View>
@@ -26,6 +27,7 @@ export default function TextInputFieldComp({
           borderRadius: 5,
         }}>
         <TextInput
+          value={value}
           keyboardType={keyboard}
           placeholder={placeholder}
           secureTextEntry={security}

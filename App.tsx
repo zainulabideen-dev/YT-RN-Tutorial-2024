@@ -5,6 +5,7 @@ import HomeScreen from './src/screen/home';
 import SignInScreen from './src/screen/signin';
 import TabScreen from './src/screen/tab';
 import SignUpScreen from './src/screen/signUp';
+import FormScreen from './src/screen/form';
 import Toast from 'react-native-toast-message';
 
 const Stack = createNativeStackNavigator();
@@ -14,11 +15,12 @@ function App(): React.JSX.Element {
     <>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="FormScreen"
           screenOptions={{
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="FormScreen" component={FormScreen} />
           <Stack.Screen name="SignInScreen" component={SignInScreen} />
           <Stack.Screen name="TabScreen" component={TabScreen} />
           <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
